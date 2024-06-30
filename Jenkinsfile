@@ -4,24 +4,21 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // Команды для сборки проекта
-                sh './gradlew build' // Для проектов Gradle
+                bat '"C:\\Program Files\\Java\\jdk-17\\bin\\java.exe" -version' // Пример Windows-команды
+                bat '"C:\\Program Files\\Java\\jdk-17\\bin\\java.exe" -jar your-application.jar' // Пример команды для сборки проекта с Gradle
             }
         }
     }
 
     post {
-            always {
-                // Действия, которые будут выполнены всегда, независимо от результата
-                echo 'This will always run'
-            }
-            success {
-                // Действия, которые будут выполнены при успешной сборке
-                echo 'This will run only if successful'
-            }
-            failure {
-                // Действия, которые будут выполнены при ошибке сборки
-                echo 'This will run only if failed'
-            }
+        always {
+            echo 'Этот блок выполнится всегда'
         }
+        success {
+            echo 'Этот блок выполнится только в случае успешного завершения'
+        }
+        failure {
+            echo 'Этот блок выполнится только в случае ошибки'
+        }
+    }
 }
