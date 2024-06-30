@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat '"C:\\Program Files\\Java\\jdk-17\\bin\\java.exe" -version' // Пример Windows-команды
-                bat '"C:\\Program Files\\Java\\jdk-17\\bin\\java.exe" -jar your-application.jar' // Пример команды для сборки проекта с Gradle
+                // Замените путь на ваш полный путь к jar файлу
+                bat '"C:\\Program Files\\Java\\jdk-17\\bin\\java.exe" -jar "полный_путь_к_вашему_файлу\\your-application.jar"'
             }
         }
     }
