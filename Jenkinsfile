@@ -4,8 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // Замените путь на ваш полный путь к jar файлу
-                bat '"C:\\Program Files\\Java\\jdk-17\\bin\\java.exe" -jar "C:\\Users\\hayka\\IdeaProjects\\spring-kafka\\build\\libs\\spring-kafka-0.0.1-SNAPSHOT.jar"'
+                // Команда для сборки проекта с помощью Gradle
+                bat '"C:\\Program Files\\Java\\jdk-17\\bin\\java.exe" -version'
+                bat './gradlew clean build'
             }
         }
     }
