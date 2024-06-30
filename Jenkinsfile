@@ -7,12 +7,9 @@ pipeline {
 
     stages {
         stage('Build') {
-            steps {
-                script {
-                    // Используем JAVA_HOME для выполнения команд Java
-                    bat "${JAVA_HOME}\\bin\\java.exe -version"
-                    bat "${JAVA_HOME}\\bin\\java.exe -jar \"C:\\Users\\hayka\\IdeaProjects\\spring-kafka\\build\\libs\\spring-kafka-0.0.1-SNAPSHOT.jar\""
-                }
+
+                steps {
+                       sh './gradlew build'
             }
         }
     }
